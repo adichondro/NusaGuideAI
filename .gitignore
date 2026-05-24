@@ -1,0 +1,145 @@
+# =========================================================================
+# NusaGuide AI - Professional Git Ignore File
+# =========================================================================
+
+# --- Dependencies ---
+# Third-party dependency directories installed via npm/yarn/pnpm
+node_modules/
+jspm_packages/
+web_modules/
+
+# --- Environment and Secret Files ---
+# Never commit API keys, database credentials, or secret tokens to git
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+*.env.local
+
+# --- Build and Output Directories ---
+# Vite default production build output directory
+dist/
+dist-ssr/
+# Standard React/Angular build output directories
+build/
+out/
+# Next.js build output
+.next/
+# Nuxt.js build output
+.nuxt/
+# Serverless and deployment artifacts
+.serverless/
+.docusaurus/
+.vuepress/dist/
+
+# --- Logs, Debug, and Diagnostic Files ---
+# System and npm logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Diagnostic reports (CRA, Vite, Node, etc.)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Runtime data (PIDs and seed files)
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Testing / Code coverage output
+coverage/
+*.lcov
+.nyc_output/
+
+# --- Caches and Temporary Directories ---
+# Vite development cache
+.vite/
+# ESLint and Stylelint cache files
+.eslintcache
+.stylelintcache
+# Parcel development cache
+.cache/
+.parcel-cache/
+# TypeScript build cache
+*.tsbuildinfo
+# Prettier cache
+.prettiercache
+
+# --- IDEs, Text Editors, and Developer Tools ---
+# Visual Studio Code
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# WebStorm / IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Sublime Text / TextMate
+*.sublime-project
+*.sublime-workspace
+
+# Vim / Emacs backup and swap files
+*.swp
+*.swo
+*~
+\#*\#
+.#*
+
+# Visual Studio / MSBuild project configurations
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.user
+
+# --- Operating System Files ---
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.Spotlight-V100
+.Trashes
+VolumeIcon.icns
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows system files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.lnk
+*.cab
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# --- Cypress / E2E Testing ---
+cypress/screenshots/
+cypress/videos/
+
+# --- Miscellaneous / Package Manager Artifacts ---
+# Backup files
+*.bak
+*.tmp
+*.temp
+# npm/yarn/pnpm local caches
+.npm/
+.yarn-metadata.json
+.pnpm-store/

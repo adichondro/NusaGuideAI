@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0058be;
+  --color-primary-hover: #0047a0;
+  --color-primary-container: #2170e4;
+  --color-on-primary-container: #fefcff;
+
+  --color-secondary: #006c49;
+  --color-secondary-container: #6cf8bb;
+  --color-on-secondary-container: #00714d;
+
+  /* High-brightness Light Mode Theme */
+  --color-surface: #f8f9ff;
+  --color-surface-dim: #cbdbf5;
+  --color-surface-bright: #f8f9ff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #eff4ff;
+  --color-surface-container: #e5eeff;
+  --color-surface-container-high: #dce9ff;
+  --color-surface-container-highest: #d3e4fe;
+
+  --color-on-surface: #0b1c30;
+  --color-on-surface-variant: #424754;
+  --color-outline: #727785;
+  --color-outline-variant: #c2c6d6;
+
+  --color-hotel: #f59e0b;
+  --color-transport: #3b82f6;
+  --color-food: #10b981;
+  --color-tickets: #ec4899;
+
+  --font-display: "Sora", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --rounded-sm: 0.25rem;
+  --rounded-default: 0.5rem;
+  --rounded-md: 0.75rem;
+  --rounded-lg: 1rem;
+  --rounded-xl: 1.5rem;
+  --rounded-full: 9999px;
+}
+
+/* Custom Base Styling overrides for light travel-tech layout */
+@layer base {
+  body {
+    background-color: #f8f9ff;
+    color: #0b1c30;
+    font-family: var(--font-body);
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Premium Light Mode Glassmorphic Panels */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 88, 190, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(59, 130, 246, 0.06);
+}
+
+.glass-panel-interactive {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel-interactive:hover {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(0, 88, 190, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px 0 rgba(59, 130, 246, 0.1);
+}
+
+/* Leaflet Custom Popup Styling overrides for light mode integration */
+.leaflet-popup-content-wrapper {
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 88, 190, 0.08);
+  color: #0b1c30 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.08) !important;
+}
+
+.leaflet-popup-tip {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid rgba(0, 88, 190, 0.08);
+}
+
+@keyframes slideInToast {
+  from {
+    transform: translateY(100%) scale(0.9);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInPage {
+  from {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes typingDot {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.typing-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-on-surface-variant);
+  border-radius: 50%;
+  animation: typingDot 1.4s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
