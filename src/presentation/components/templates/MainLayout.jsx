@@ -5,6 +5,7 @@ import { useConfigStore } from '../../store/useConfigStore';
 import { Navbar } from '../organisms/Navbar';
 import { SettingsModal } from '../organisms/SettingsModal';
 import { ToastContainer } from '../atoms/ToastContainer';
+import { FloatingFooter } from '../organisms/FloatingFooter';
 
 export function MainLayout() {
   const [settingsOpen, setSettingsOpen] = useState(false);
@@ -41,8 +42,11 @@ export function MainLayout() {
       <Navbar onSettingsOpen={() => setSettingsOpen(true)} />
 
       {/* Main Page Area */}
-      <main className="flex-grow container mx-auto px-6 py-8">
-        <Outlet />
+      <main className="flex-grow container mx-auto px-6 py-8 flex flex-col">
+        <div className="flex-grow">
+          <Outlet />
+        </div>
+        <FloatingFooter />
       </main>
 
       {/* Global Config Settings Modal */}
